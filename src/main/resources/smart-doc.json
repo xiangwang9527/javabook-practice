@@ -1,0 +1,26 @@
+{
+  "serverUrl": "http://127.0.0.1:8080",
+  "isStrict": false,
+  "allInOne": true,
+  "outPath": "src/main/resources/static/doc",
+  "coverOld": true,
+  "createDebugPage": true,
+  "style": "xt256",
+  "packageFilters": "cn.javabook.chapter15.*",
+  "appToken": "e09dd49c05ac4b4a86c4a13e4e1e00b4",
+  "openUrl": "http://172.16.185.166:7788/api",
+  "md5EncryptedHtmlName": true,
+  "projectName": "幂等技术实现",
+  "tornaDebug": true,
+  "inlineEnum": true,
+  "skipTransientField": true,
+  "revisionLogs": [
+    {
+      "version": "1.0.0",
+      "revisionTime": "2024-01-01 00:00",
+      "status": "创建",
+      "author": "javabook",
+      "remarks": "工程实践篇"
+    }
+  ]
+}

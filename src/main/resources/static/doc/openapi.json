@@ -1,0 +1,109 @@
+{
+  "basePath": "/",
+  "paths": {
+    "/idempotent/again": {
+      "post": {
+        "summary": "再测试幂等",
+        "deprecated": false,
+        "description": "再测试幂等",
+        "tags": [
+          "并发压力测试Controller"
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ServerResponse_response"
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "idempotentagain",
+        "parameters": [
+          {
+            "schema": {
+              "format": "string",
+              "type": "string"
+            },
+            "in": "header",
+            "description": "Oauth2 权限请求头",
+            "type": "string",
+            "required": false,
+            "example": "Bearer ",
+            "name": "Authorization"
+          }
+        ]
+      }
+    },
+    "/idempotent/token": {
+      "get": {
+        "summary": "先通过接口得到token",
+        "deprecated": false,
+        "description": "先通过接口得到token",
+        "tags": [
+          "并发压力测试Controller"
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ServerResponse_response"
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "idempotenttoken",
+        "parameters": [
+          {
+            "schema": {
+              "format": "string",
+              "type": "string"
+            },
+            "in": "header",
+            "description": "Oauth2 权限请求头",
+            "type": "string",
+            "required": false,
+            "example": "Bearer ",
+            "name": "Authorization"
+          }
+        ]
+      }
+    }
+  },
+  "host": "http://127.0.0.1:8080",
+  "definitions": {
+    "string": {
+      "format": "string",
+      "type": "string"
+    },
+    "ServerResponse_response": {
+      "properties": {
+        "code": {
+          "format": "int32",
+          "description": "No comments found.",
+          "type": "integer",
+          "example": "0"
+        },
+        "message": {
+          "format": "string",
+          "description": "No comments found.",
+          "type": "string",
+          "example": ""
+        },
+        "data": {
+          "description": "No comments found.(object)",
+          "type": "object"
+        }
+      }
+    }
+  },
+  "swagger": "2.0",
+  "info": {
+    "title": "javabook-practice",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "并发压力测试Controller",
+      "description": "并发压力测试Controller"
+    }
+  ]
+}

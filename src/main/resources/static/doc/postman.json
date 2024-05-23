@@ -1,0 +1,89 @@
+{
+  "info": {
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "11821ba2-e2f2-4cc0-8669-3c007c7c1c18",
+    "name": "javabook-practice"
+  },
+  "item": [
+    {
+      "name": "并发压力测试Controller\r\n首先访问/idempotent/token路径获取到具体到token\r\n再将获取的token放到/idempotent/again方法的参数中，可以看到第一次请求成功，第二次请求失败",
+      "item": [
+        {
+          "name": "先通过接口得到token",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8080/idempotent/token",
+              "protocol": "http",
+              "path": [
+                "idempotent",
+                "token"
+              ],
+              "host": [
+                "127.0.0.1"
+              ],
+              "port": "8080",
+              "query": [],
+              "variable": []
+            },
+            "description": "先通过接口得到token",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer ",
+                "type": "text",
+                "disabled": true,
+                "name": "Authorization",
+                "description": "Oauth2 权限请求头"
+              }
+            ]
+          },
+          "description": "先通过接口得到token"
+        },
+        {
+          "name": "测试幂等",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8080/idempotent/again",
+              "protocol": "http",
+              "path": [
+                "idempotent",
+                "again"
+              ],
+              "host": [
+                "127.0.0.1"
+              ],
+              "port": "8080",
+              "query": [],
+              "variable": []
+            },
+            "description": "测试幂等",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer ",
+                "type": "text",
+                "disabled": true,
+                "name": "Authorization",
+                "description": "Oauth2 权限请求头"
+              }
+            ]
+          },
+          "description": "测试幂等"
+        }
+      ]
+    }
+  ]
+}
